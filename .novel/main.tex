@@ -1,0 +1,44 @@
+% main.tex
+
+\documentclass[
+  lualatex,                       % lualatexを使う
+  tate,                           % 縦書き
+  hanging_punctuation,            % ぶらさがり組
+  open_bracket_pos=nibu_tentsuki, % 行頭開き括弧は二分天付き
+  titlepage,                      % タイトルあり
+  line_length=42zw,               % 一行当りの文字数は43文字
+  number_of_lines=34,             % 一ページ当りの行数は18行
+  landscape
+]{jlreq}
+
+\usepackage{luatexja-fontspec, luatexja-otf, luatexja-ruby}
+\usepackage{import}
+
+\setsansfont[
+    UprightFont = {*-Roman},
+    BoldFont = {*-Roman},
+    FontFace = {eb}{\shapedefault}{*-Roman},
+    Script = Default
+]{GenEiNombre}
+
+\setmainjfont[
+    UprightFont={*-Regular.ttf},
+    BoldFont={*-Bold.ttf},
+    FontFace={eb}{\shapedefault}{*-Regular.ttf},
+    Script=Default
+]{ShipporiMincho}
+
+\setsansjfont[
+    UprightFont = {*-Regular},
+    BoldFont = {*-Bold},
+    FontFace = {eb}{\shapedefault}{*-Bold},
+    Script = Default
+]{HackGenConsoleNF}
+
+\pagestyle{plain}
+
+\begin{document}
+
+   \subinputfrom{../src/}{index.tex}
+
+\end{document}
